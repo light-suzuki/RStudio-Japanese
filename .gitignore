@@ -1,0 +1,16 @@
+rstudio-jp-desktop/
+rstudio-jp-desktop-backup-*/
+rstudio-jp-state/
+output/
+*.zip
+*.7z
+*.tar
+*.gz
+*.exe
+*.dll
+*.pdb
+*.ico
+*.png
+*.log
+Thumbs.db
+.DS_Store

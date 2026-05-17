@@ -1,0 +1,20 @@
+Japanese Overlay for RStudio Desktop
+====================================
+
+This repository contains only the overlay scripts, CSS, and JavaScript authored
+for this project. It does not contain RStudio Desktop, Posit binaries, RStudio
+source code, Posit logos, RStudio logos, or official distribution archives.
+
+RStudio Desktop is a product of Posit Software, PBC and is licensed separately.
+The upstream RStudio source repository states that RStudio is licensed under
+the GNU Affero General Public License version 3 (AGPLv3), with license terms in
+the upstream COPYING file.
+
+Posit, RStudio, and Shiny are trademarks of Posit Software, PBC, all rights
+reserved, and may be registered in the United States Patent and Trademark Office
+and in other countries. This project is unofficial and is not endorsed by,
+sponsored by, or affiliated with Posit Software, PBC.
+
+Users should download RStudio Desktop only from official Posit distribution
+locations. The setup scripts in this repository download an official xcopy
+build locally and apply this overlay on the user's machine.

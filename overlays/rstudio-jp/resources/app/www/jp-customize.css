@@ -1,0 +1,277 @@
+/*
+ * Local-only RStudio Desktop customizations.
+ * This file is intentionally small: it overlays user-facing labels and adds a
+ * lightweight Ace editor structure map without rebuilding the GWT application.
+ */
+
+.jp-minimap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 88px;
+  overflow: hidden;
+  z-index: 8;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(248, 249, 251, 0.92);
+  user-select: none;
+  cursor: pointer;
+}
+
+.jp-minimap-hidden .jp-minimap {
+  display: none;
+}
+
+.jp-minimap__rows {
+  position: absolute;
+  inset: 4px 5px;
+  pointer-events: none;
+}
+
+.jp-minimap__row {
+  --jp-depth: 0;
+  --jp-indent: 0;
+  display: block;
+  position: relative;
+  height: 3px;
+  margin: 0 0 1px;
+  border-radius: 999px;
+  background: rgba(86, 96, 111, 0.22);
+  opacity: 0.88;
+  transform: translateX(calc(var(--jp-indent) * 3px));
+  width: calc(100% - (var(--jp-indent) * 3px));
+}
+
+.jp-minimap__row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--jp-depth) * 4px);
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(28, 113, 216, 0.24);
+}
+
+.jp-minimap__row--blank {
+  opacity: 0;
+}
+
+.jp-minimap__row--section {
+  height: 5px;
+  margin-top: 2px;
+  background: rgba(20, 112, 84, 0.82);
+}
+
+.jp-minimap__row--function {
+  height: 4px;
+  background: rgba(28, 113, 216, 0.72);
+}
+
+.jp-minimap__row--control {
+  background: rgba(140, 85, 28, 0.50);
+}
+
+.jp-minimap__row--library {
+  background: rgba(112, 82, 192, 0.58);
+}
+
+.jp-minimap__row--pipe {
+  background: rgba(0, 135, 122, 0.58);
+}
+
+.jp-minimap__row--plot {
+  background: rgba(195, 89, 42, 0.62);
+}
+
+.jp-minimap__row--data {
+  background: rgba(58, 126, 80, 0.56);
+}
+
+.jp-minimap__row--message {
+  background: rgba(66, 104, 148, 0.50);
+}
+
+.jp-minimap__row--guard {
+  height: 4px;
+  background: rgba(178, 71, 91, 0.72);
+}
+
+.jp-minimap__row--comment {
+  background: rgba(108, 117, 125, 0.28);
+}
+
+.jp-minimap__row--nested {
+  box-shadow: inset 0 0 0 1px rgba(28, 113, 216, 0.10);
+}
+
+.jp-minimap__row--error {
+  height: 5px;
+  background: rgba(190, 49, 68, 0.88);
+  box-shadow: 0 0 0 1px rgba(190, 49, 68, 0.22);
+}
+
+.jp-minimap__row--warning {
+  height: 4px;
+  background: rgba(193, 125, 17, 0.76);
+  box-shadow: 0 0 0 1px rgba(193, 125, 17, 0.18);
+}
+
+.ace_editor.jp-minimap-enabled .ace_content {
+  background-image:
+    linear-gradient(to right, rgba(28, 113, 216, 0.045) 1px, transparent 1px);
+  background-size: 40px 100%;
+  background-position: 8px 0;
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line {
+  border-radius: 3px;
+}
+
+.ace_editor.jp-minimap-enabled .ace_marker-layer .ace_active-line {
+  background: rgba(28, 113, 216, 0.075) !important;
+  box-shadow: inset 3px 0 0 rgba(28, 113, 216, 0.50);
+}
+
+.ace_editor.jp-minimap-enabled .ace_gutter-active-line {
+  background: rgba(28, 113, 216, 0.10) !important;
+  color: #0f5fa8 !important;
+  font-weight: 600;
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--nested {
+  background-image:
+    linear-gradient(to right, rgba(28, 113, 216, 0.075), rgba(28, 113, 216, 0.025));
+  background-size: calc(var(--jp-depth) * 8px) 100%;
+  background-repeat: no-repeat;
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--section {
+  color: #17694d !important;
+  background: rgba(20, 112, 84, 0.10);
+  box-shadow: inset 3px 0 0 rgba(20, 112, 84, 0.72);
+  font-weight: 600;
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--function {
+  background: rgba(28, 113, 216, 0.075);
+  box-shadow: inset 3px 0 0 rgba(28, 113, 216, 0.62);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--control {
+  background: rgba(140, 85, 28, 0.07);
+  box-shadow: inset 3px 0 0 rgba(140, 85, 28, 0.52);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--library {
+  background: rgba(112, 82, 192, 0.07);
+  box-shadow: inset 3px 0 0 rgba(112, 82, 192, 0.50);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--pipe {
+  background: rgba(0, 135, 122, 0.065);
+  box-shadow: inset 3px 0 0 rgba(0, 135, 122, 0.48);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--plot {
+  background: rgba(195, 89, 42, 0.075);
+  box-shadow: inset 3px 0 0 rgba(195, 89, 42, 0.52);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--data {
+  background: rgba(58, 126, 80, 0.065);
+  box-shadow: inset 3px 0 0 rgba(58, 126, 80, 0.50);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--message {
+  background: rgba(66, 104, 148, 0.06);
+  box-shadow: inset 3px 0 0 rgba(66, 104, 148, 0.42);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--guard {
+  background: rgba(178, 71, 91, 0.10);
+  box-shadow: inset 3px 0 0 rgba(178, 71, 91, 0.70);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--comment {
+  background: rgba(108, 117, 125, 0.055);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--warning {
+  background: rgba(193, 125, 17, 0.12);
+  box-shadow: inset 3px 0 0 rgba(193, 125, 17, 0.78);
+}
+
+.ace_editor.jp-minimap-enabled .ace_text-layer .ace_line.jp-code-line--error {
+  background: rgba(190, 49, 68, 0.14);
+  box-shadow: inset 3px 0 0 rgba(190, 49, 68, 0.88);
+}
+
+.ace_editor.jp-minimap-enabled .ace_error,
+.ace_editor.jp-minimap-enabled .ace_invalid,
+.ace_editor.jp-minimap-enabled .ace_gutter-cell.ace_error {
+  background-color: rgba(190, 49, 68, 0.16) !important;
+  color: #9f1d35 !important;
+}
+
+.ace_editor.jp-minimap-enabled .ace_warning,
+.ace_editor.jp-minimap-enabled .ace_gutter-cell.ace_warning {
+  background-color: rgba(193, 125, 17, 0.16) !important;
+  color: #8a5a0a !important;
+}
+
+.jp-minimap__viewport {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 8px;
+  border: 1px solid rgba(28, 113, 216, 0.45);
+  background: rgba(28, 113, 216, 0.10);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.gwt-SplitLayoutPanel-HDragger,
+.gwt-SplitLayoutPanel-VDragger,
+[class*="SplitLayoutPanel-HDragger"],
+[class*="SplitLayoutPanel-VDragger"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+.jp-rstudio-resize-handle:hover,
+.jp-rstudio-resize-handle:active {
+  background: rgba(28, 113, 216, 0.26) !important;
+  opacity: 1 !important;
+}
+
+.jp-rstudio-resize-handle:active {
+  box-shadow: 0 0 0 1px rgba(28, 113, 216, 0.30) inset !important;
+}
+
+.ace_editor.jp-minimap-enabled .ace_scroller {
+  right: 88px !important;
+}
+
+.ace_editor.jp-minimap-enabled .ace_scrollbar-v {
+  right: 88px !important;
+}
+
+.jp-minimap-hidden .ace_editor.jp-minimap-enabled .ace_scroller,
+.jp-minimap-hidden .ace_editor.jp-minimap-enabled .ace_scrollbar-v {
+  right: 0 !important;
+}
+
+@media (max-width: 1100px) {
+  .jp-minimap {
+    width: 56px;
+  }
+
+  .ace_editor.jp-minimap-enabled .ace_scroller,
+  .ace_editor.jp-minimap-enabled .ace_scrollbar-v {
+    right: 56px !important;
+  }
+
+}

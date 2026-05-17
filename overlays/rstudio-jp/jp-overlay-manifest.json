@@ -1,0 +1,32 @@
+{
+  "name": "Japanese Overlay for RStudio Desktop",
+  "baseProduct": "RStudio Desktop",
+  "baseVersionFile": "resources/app/VERSION",
+  "baseSourceFile": "resources/app/SOURCE",
+  "upstreamLatestApi": "https://dailies.rstudio.com/rstudio/latest/index.json",
+  "upstreamPlatformKey": "windows-xcopy",
+  "overlayRoot": "overlays/rstudio-jp",
+  "customFiles": [
+    "jp-overlay-manifest.json",
+    "resources/app/package.json",
+    "resources/app/www/index.htm",
+    "resources/app/www/jp-customize.css",
+    "resources/app/www/jp-customize.js"
+  ],
+  "optionalLocalFiles": [
+    "resources/app/bin/rsession-jp-utf8.exe",
+    "resources/app/jp-assets/rstudio-jp.ico",
+    "resources/app/jp-assets/rstudio-jp.png"
+  ],
+  "wrapperScripts": [
+    "scripts/install-rstudio-jp-desktop.ps1",
+    "scripts/check-rstudio-jp-upstream.ps1",
+    "scripts/apply-rstudio-jp-overlay.ps1",
+    "scripts/start-rstudio-jp-desktop.ps1"
+  ],
+  "reapplyChecklist": [
+    "Unpack the upstream Windows xcopy zip into a staging folder.",
+    "Run scripts/apply-rstudio-jp-overlay.ps1 with the upstream folder as BaseRoot and a fresh TargetRoot.",
+    "Run scripts/check-rstudio-jp-upstream.ps1 and scripts/start-rstudio-jp-desktop.ps1 -NoLaunch."
+  ]
+}
