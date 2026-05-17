@@ -113,7 +113,7 @@ function Invoke-RStudioJpAutoUpdate {
 }
 
 if (-not (Test-Path -LiteralPath $Exe)) {
-    throw "RStudio JP Desktop executable was not found: $Exe"
+    throw "RStudio Desktop executable was not found: $Exe"
 }
 
 New-Item -ItemType Directory -Force -Path $LogDir, $PrefsDir, (Join-Path $DataHome "RStudio"), $ElectronUserData | Out-Null
@@ -156,7 +156,7 @@ public static extern bool SetForegroundWindow(System.IntPtr hWnd);
 Invoke-RStudioJpAutoUpdate
 
 if (-not (Test-Path -LiteralPath $Exe)) {
-    throw "RStudio JP Desktop executable was not found after update check: $Exe"
+    throw "RStudio Desktop executable was not found after update check: $Exe"
 }
 
 $oldConfigHome = $env:RSTUDIO_CONFIG_HOME

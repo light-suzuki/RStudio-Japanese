@@ -1002,7 +1002,7 @@
     if (window.localStorage.getItem("rstudioJp.minimapVisible") === "false") {
       document.body.classList.add("jp-minimap-hidden");
     }
-    document.title = "RStudio JP Desktop";
+    document.title = "Japanese Overlay for RStudio Desktop";
     translateAllFrames();
     applyFourPaneLayout();
     scanEditors();

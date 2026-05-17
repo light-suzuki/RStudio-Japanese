@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Japanese Overlay for RStudio Desktop preview</title>
+  <desc id="desc">A stylized source editor with Japanese UI labels, R code structure highlights, and a right-side minimap.</desc>
+  <rect width="1200" height="520" fill="#f6f8fb"/>
+  <rect x="40" y="38" width="1120" height="444" rx="14" fill="#ffffff" stroke="#c9d3df"/>
+  <rect x="40" y="38" width="1120" height="44" rx="14" fill="#e9eef4"/>
+  <rect x="40" y="70" width="1120" height="12" fill="#e9eef4"/>
+  <text x="72" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">ファイル</text>
+  <text x="142" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">編集</text>
+  <text x="196" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">コード</text>
+  <text x="264" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">表示</text>
+  <text x="322" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">プロット</text>
+  <text x="416" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653">セッション</text>
+  <rect x="72" y="108" width="780" height="340" rx="8" fill="#fbfcfd" stroke="#d7dee8"/>
+  <rect x="72" y="108" width="52" height="340" rx="8" fill="#eef2f6"/>
+  <rect x="124" y="108" width="728" height="340" fill="#fbfcfd"/>
+  <g font-family="Cascadia Mono, Consolas, monospace" font-size="18">
+    <text x="92" y="146" fill="#8291a1">1</text>
+    <rect x="124" y="128" width="728" height="26" fill="#147054" opacity=".10"/>
+    <rect x="124" y="128" width="4" height="26" fill="#147054" opacity=".72"/>
+    <text x="144" y="147" fill="#17694d"># 1. データ準備 ----</text>
+    <text x="92" y="184" fill="#8291a1">2</text>
+    <rect x="124" y="166" width="728" height="26" fill="#3a7e50" opacity=".08"/>
+    <rect x="124" y="166" width="4" height="26" fill="#3a7e50" opacity=".55"/>
+    <text x="144" y="185" fill="#1f2a36">df &lt;- data.frame(x = 1:10, y = rnorm(10))</text>
+    <text x="92" y="222" fill="#8291a1">3</text>
+    <rect x="124" y="204" width="728" height="26" fill="#00877a" opacity=".08"/>
+    <rect x="124" y="204" width="4" height="26" fill="#00877a" opacity=".55"/>
+    <text x="144" y="223" fill="#1f2a36">result &lt;- df |&gt; transform(z = x + y)</text>
+    <text x="92" y="260" fill="#8291a1">4</text>
+    <rect x="124" y="242" width="728" height="26" fill="#1c71d8" opacity=".08"/>
+    <rect x="124" y="242" width="4" height="26" fill="#1c71d8" opacity=".62"/>
+    <text x="144" y="261" fill="#1f2a36">fit_model &lt;- function(data) {</text>
+    <text x="92" y="298" fill="#8291a1">5</text>
+    <rect x="124" y="280" width="728" height="26" fill="#8c551c" opacity=".08"/>
+    <rect x="124" y="280" width="4" height="26" fill="#8c551c" opacity=".55"/>
+    <text x="164" y="299" fill="#1f2a36">if (nrow(data) == 0) stop("empty data")</text>
+    <text x="92" y="336" fill="#8291a1">6</text>
+    <rect x="124" y="318" width="728" height="26" fill="#c3592a" opacity=".08"/>
+    <rect x="124" y="318" width="4" height="26" fill="#c3592a" opacity=".58"/>
+    <text x="164" y="337" fill="#1f2a36">plot(data$x, data$y)</text>
+    <text x="92" y="374" fill="#8291a1">7</text>
+    <rect x="124" y="356" width="728" height="26" fill="#426894" opacity=".07"/>
+    <rect x="124" y="356" width="4" height="26" fill="#426894" opacity=".48"/>
+    <text x="164" y="375" fill="#1f2a36">summary(lm(y ~ x, data = data))</text>
+    <text x="92" y="412" fill="#8291a1">8</text>
+    <text x="144" y="413" fill="#1f2a36">}</text>
+  </g>
+  <rect x="872" y="108" width="248" height="340" rx="8" fill="#fbfcfd" stroke="#d7dee8"/>
+  <text x="900" y="144" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#264653">構造ミニマップ</text>
+  <g transform="translate(906 176)">
+    <rect width="176" height="8" rx="4" fill="#147054" opacity=".82"/>
+    <rect y="24" width="150" height="6" rx="3" fill="#3a7e50" opacity=".62"/>
+    <rect y="46" width="132" height="6" rx="3" fill="#00877a" opacity=".62"/>
+    <rect y="68" width="166" height="7" rx="4" fill="#1c71d8" opacity=".72"/>
+    <rect y="92" x="18" width="134" height="6" rx="3" fill="#8c551c" opacity=".58"/>
+    <rect y="114" x="30" width="126" height="6" rx="3" fill="#b2475b" opacity=".72"/>
+    <rect y="136" x="30" width="156" height="6" rx="3" fill="#c3592a" opacity=".70"/>
+    <rect y="158" x="30" width="142" height="6" rx="3" fill="#426894" opacity=".58"/>
+    <rect y="198" width="176" height="32" rx="4" fill="#1c71d8" opacity=".10" stroke="#1c71d8" stroke-opacity=".45"/>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#4b5b6b">
+    <text x="900" y="390">R code の流れを横目で追える</text>
+    <text x="900" y="418">公式 binary は再配布しない</text>
+  </g>
+</svg>
