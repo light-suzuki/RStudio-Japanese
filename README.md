@@ -1,5 +1,9 @@
 # Japanese Overlay for RStudio Desktop
 
+[![CI](https://github.com/light-suzuki/RStudio-Japanese/actions/workflows/ci.yml/badge.svg)](https://github.com/light-suzuki/RStudio-Japanese/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/light-suzuki/=semver)](https://github.com/light-suzuki/RStudio-Japanese/releases)
+
+
 <p align="center">
   <img src="docs/preview.svg" alt="Japanese Overlay for RStudio Desktop preview" width="860">
 </p>
