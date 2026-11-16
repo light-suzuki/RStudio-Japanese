@@ -1,7 +1,7 @@
 # Japanese Overlay for RStudio Desktop
 
 [![CI](https://github.com/light-suzuki/RStudio-Japanese/actions/workflows/ci.yml/badge.svg)](https://github.com/light-suzuki/RStudio-Japanese/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/light-suzuki/=semver)](https://github.com/light-suzuki/RStudio-Japanese/releases)
+[![Release](https://img.shields.io/github/v/release/light-suzuki/RStudio-Japanese?sort=semver)](https://github.com/light-suzuki/RStudio-Japanese/releases)
 
 
 <p align="center">
@@ -36,8 +36,8 @@ RStudio Desktop を日本語環境で読みやすくするための、非公式 
 PowerShell で実行します。
 
 ```powershell
-git clone https://github.com/light-suzuki/Rsutudio-Japanese.git
-cd Rsutudio-Japanese
+git clone https://github.com/light-suzuki/RStudio-Japanese.git
+cd RStudio-Japanese
 
 powershell -ExecutionPolicy Bypass -File .\scripts\install-rstudio-jp-desktop.ps1
 powershell -ExecutionPolicy Bypass -File .\scripts\start-rstudio-jp-desktop.ps1
